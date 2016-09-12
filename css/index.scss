@@ -1,0 +1,180 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900);
+
+$LIGHT: #F6F9FC;
+$WHITE: white;
+$DARK: #000;
+$DARKBLUE: #302B54;
+$LIGHTBLUE: #B0E2FF;
+$ORANGE: #f4a853;
+$PINK: #ff7dc4;
+$GREEN: #52f562;
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box; 
+}
+
+// TYPOGRAPHY
+html, body {
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    background-color: $LIGHTBLUE;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: black;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+}
+
+h3 {
+    font-size: 100%;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    color: black;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.light {
+    opacity: 0.7;
+}
+
+.button {
+    padding: 0 3rem;
+    font-size: 100%;
+    line-height: 44px;
+    height: 48px;
+    @include transition(all, 0.2s, ease-in-out);
+}
+
+header {
+    padding: 6rem 3rem;
+    background: $WHITE;
+    color: $DARK;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    h3 {
+        color: white;
+    }
+
+    .button.button-primary {
+        margin-top: 2rem;
+        background: $WHITE;
+        color: $DARK;
+        border: 1px solid $LIGHTBLUE;
+        z-index: 999;
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: $LIGHTBLUE;
+            color: $DARK;
+            border-color: $LIGHTBLUE;
+            opacity: 0.8;
+        }
+
+        a {
+            color: $DARK;
+        }
+    }
+}
+
+.logo {
+    margin-bottom: 16px;
+    text-align: center;
+
+    img {
+        display: inline-block;
+        height: 300px;
+        width: 300px;
+        vertical-align: middle;
+    }
+}
+
+#inquiries, #faq {
+    margin: 6rem 2rem;
+    display: inline;
+    padding-top: 1.5em;
+    text-align: center;
+
+    h1 {
+        color: black;
+        margin-top: 1.5em;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    h3 {
+        color: black;
+        margin-top: 4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: $DARK;
+
+        &:hover {
+            color: $WHITE;
+        }
+    }
+
+    .container {
+        max-width: 640px;
+    }
+}
+
+#speakers {
+    .divider {
+        border-bottom: 1px solid #E5E5E5;
+        margin-top: 6em;
+    }
+}
+
+footer {
+    background-color: black;
+    position: relative;
+    height: 60px;
+    margin-top: 5rem;
+    text-align: center;
+    width: 100%;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+
+    img {
+        height: 25px;
+        float: left;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+    }
+
+    #sponsor {
+        padding-top: 1rem;
+    }
+}
